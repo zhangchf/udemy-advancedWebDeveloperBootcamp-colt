@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Welcome to Dog CEO</h1>
+    <img id="photo" src="https://dog.ceo/api/img/spaniel-japanese/n02085782_1434.jpg" alt="Dog image">
+    <br>
+    <button id="btn">Get another dog!</button>
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let img = document.querySelector("#photo");
+
+        btn.addEventListener("click", function () {
+            let xhr = new XMLHttpRequest();
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    let url = JSON.parse(xhr.responseText).message;
+                    console.log(url);
+                    img.src = url;
+                }
+            }
+
+            xhr.open("GET", "https://dog.ceo/api/breeds/image/random");
+            xhr.send();
+        });
+    </script>
+
+</body>
+
+</html>
