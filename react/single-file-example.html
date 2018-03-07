@@ -13,6 +13,21 @@
 <body>
     <div id="app"></div>
     <script type="text/babel">
+        class HobbyList extends React.Component {
+            render() {
+                const hobbies = ["Sleeping", "Eating", "Cuddling"];
+                const liStyle = {fontSize: "1.5em"};
+                return (
+                    <ul>
+                        {
+                            hobbies.map((h, i) => {
+                                return <li key={i} style={liStyle}>{h}</li>
+                            })
+                        }
+                    </ul>
+                );
+            }
+        }
         class Cat extends React.Component {
             render() {
                 let h2Style = {backgroundColor: "red", fontSize:"1.5em"}
@@ -23,6 +38,7 @@
                         {"blue " + "orange"}
                         <h2 style={h2Style}>Title</h2>
                         <p style={{backgroundColor:"orange", fontSize: "2em"}}>Description</p>
+                        <HobbyList />
                     </div>
                 );
             }
