@@ -8,14 +8,22 @@
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link rel="stylesheet" href="single-file-example.css">
 </head>
 <body>
     <div id="app"></div>
     <script type="text/babel">
         class Cat extends React.Component {
             render() {
+                let h2Style = {backgroundColor: "red", fontSize:"1.5em"}
                 return (
-                    <div>Hello World!</div>
+                    <div className="cat">
+                        <h1>Hello World!</h1>
+                        {5 + 5},
+                        {"blue " + "orange"}
+                        <h2 style={h2Style}>Title</h2>
+                        <p style={{backgroundColor:"orange", fontSize: "2em"}}>Description</p>
+                    </div>
                 );
             }
         }
