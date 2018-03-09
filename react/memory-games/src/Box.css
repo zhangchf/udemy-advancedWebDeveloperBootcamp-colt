@@ -1,0 +1,12 @@
+
+.box {
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.box.hide {
+    background-color: grey;
+    width: 10px;
+}

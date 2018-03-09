@@ -1,0 +1,13 @@
+header {
+    background-color: rgb(100, 100, 143);
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    color: white;
+}
+
+header li {
+    list-style: none;
+}
