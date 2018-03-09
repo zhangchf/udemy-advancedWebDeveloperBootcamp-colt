@@ -1,12 +1,15 @@
 
 .box {
-    width: 150px;
-    height: 150px;
-    margin: 5px;
+    width: 10vw;
+    height: 10vw;
+    margin: 5px 1vw;
     border-radius: 10px;
 }
 
-.box.hide {
-    background-color: grey;
-    width: 10px;
+@media screen and (max-width: 640px) {
+    .box {
+        width: 20vw;
+        height: 20vw;
+    }
 }
+
