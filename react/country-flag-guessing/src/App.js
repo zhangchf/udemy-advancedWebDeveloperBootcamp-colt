@@ -48,14 +48,17 @@ class App extends Component {
   }
 
   onQuestionAnswered(result) {
-    let alertString;
-    if (result) {
-      alertString = "Correct!";
-    } else {
-      let {options, answer} = this.state.question;
-      alertString = "The correct answer is: " + options[answer].name;
-    }
-    alert(alertString);
+    // let alertString;
+    // if (result) {
+    //   alertString = "Correct!";
+    // } else {
+    //   let {options, answer} = this.state.question;
+    //   alertString = "The correct answer is: " + options[answer].name;
+    // }
+    // alert(alertString);
+  }
+
+  onNext() {
     this.nextQuestion();
   }
 
@@ -66,7 +69,7 @@ class App extends Component {
       <div className="App">
         <h1>Guess Country Flags! </h1>
         { question &&
-          <Question question={this.state.question} onAnswer={this.onQuestionAnswered.bind(this)}/>
+          <Question question={this.state.question} onAnswer={this.onQuestionAnswered.bind(this)} onNext={this.onNext.bind(this)}/>
         }
       </div>
     );
